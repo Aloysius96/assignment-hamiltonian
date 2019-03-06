@@ -32,7 +32,7 @@ namespace Hamiltonian
 
                 Solver.Result result;
                 Console.WriteLine("Choose one of the algorithm below:\n1 - Exhaustive Search\n" +
-                                  "2 - Tabu Greedy Search\n3 - Tabu Random Search\nOther character - Exit");
+                                  "2 - Tabu Greedy Search\n3 - Tabu Random Search\n Exit");
                 Console.Write("Enter a number: ");
                 var option = Console.ReadLine();
 
