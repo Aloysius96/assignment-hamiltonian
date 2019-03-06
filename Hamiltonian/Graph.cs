@@ -52,7 +52,7 @@ namespace Hamiltonian
             foreach (var node in Nodes)
             {
                 // Generate a number of paths connecting to nodes (1 <= number of paths <= Size - 1)
-                // Iterate the call for LinkNode method for each selected to-be-linked nodes
+              
                 var pathIndexes = GetLinkedNodesIndex(size, node);
                 foreach (var nodeIndex in pathIndexes)
                 {
@@ -86,18 +86,17 @@ namespace Hamiltonian
         private int[] GetLinkedNodesIndex(int size, Node currentNode)
         {
             // Declare the amount of paths
-            // The maximum amount of paths is reduced to prevent most nodes connecting to each other
+      
             var paths = currentNode.MaxPaths;
             //var paths = 2; // test
 
             // Get an array of node position indexes
-            // Example: Node connecting to node 0, 2 and 3 will have array of [0, 2, 3]
-
+           
             // Create a list of possible nodes to be connected
             var nodeIndexes = new List<int>();
 
             // Deduct the total paths to reduce excessive paths (more paths than intended quantity)
-            // Open paths = Total paths - existing paths
+
             var openPaths = paths - currentNode.GetPathCount();
             openPaths = openPaths < 0 ? 0 : openPaths;
 
@@ -113,9 +112,6 @@ namespace Hamiltonian
                 var index = rand.Next(nodeIndexes.Count);
                 nodeIndexes.RemoveAt(index);
 
-                // If generated position is current position or already in index then repeat
-                //if (currentPosition == index)
-                // Assign node index to array
 
             }
 
